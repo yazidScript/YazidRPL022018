@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp">
+
+    <ImageView
+        android:layout_marginTop="25dp"
+        android:paddingTop="15dp"
+        android:src="@drawable/bike"
+        android:layout_width="110dp"
+        android:layout_height="110dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:paddingLeft="15dp"
+        android:textStyle="bold"
+        android:text="WELCOME BACK,"
+        android:textColor="#000"
+        android:textSize="23sp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign to continue"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_1"
+        android:gravity="center"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/et_Username"
+            android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="30dp"
+            android:paddingBottom="18dp"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+            android:drawablePadding="10dp"
+            android:paddingBottom="18dp"
+            android:textColor="#000"
+            android:inputType="textPassword"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/btn_Login"
+            android:background="@drawable/bg_round1"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:text="Login"
+                android:textSize="17sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+   <LinearLayout
+       android:layout_below="@id/lay_1"
+       android:orientation="horizontal"
+       android:layout_marginTop="10dp"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Not a member yet? "
+           android:textColor="#000"/>
+
+       <TextView
+           android:id="@+id/tv_signup"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:text="Signup"
+           android:textColor="@color/colorPrimary"/>
+
+   </LinearLayout>
+
+
+</LinearLayout>

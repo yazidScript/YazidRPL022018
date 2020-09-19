@@ -31,16 +31,16 @@
                 tools:listitem="@layout/item_user_layout">
             </androidx.recyclerview.widget.RecyclerView>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="@dimen/_39ssp"
-                android:layout_height="@dimen/_39ssp"
-                android:src="@drawable/ic_add_circle_black_24dp"
-                android:visibility="visible"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="@dimen/_8ssp"
-                android:layout_marginBottom="@dimen/_8ssp"
-                android:id="@+id/ivNew"
-                android:tint="@color/colorPrimary" />
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:layout_width="@dimen/_39ssp"-->
+<!--                android:layout_height="@dimen/_39ssp"-->
+<!--                android:src="@drawable/ic_add_circle_black_24dp"-->
+<!--                android:visibility="visible"-->
+<!--                android:layout_gravity="bottom|end"-->
+<!--                android:layout_marginEnd="@dimen/_8ssp"-->
+<!--                android:layout_marginBottom="@dimen/_8ssp"-->
+<!--                android:id="@+id/ivNew"-->
+<!--                android:tint="@color/colorPrimary" />-->
 
         </FrameLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

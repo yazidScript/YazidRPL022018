@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (mIsFormFilled) {
                     HashMap<String, String> body = new HashMap<>();
-                    body.put("act", "register_konsumen");
+                    body.put("act", "register_user");
 
                     mProgress.show();
 
@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
         tv_Login = findViewById(R.id.tv_Login);
         et_Email = findViewById(R.id.et_Email);
         et_Password = findViewById(R.id.et_Password);
-        et_NoHp = findViewById(R.id.et_NoHp);
+        et_NoHp = findViewById(R.id.et_NoHpregister);
         et_NoKtp = findViewById(R.id.et_NoKtp);
         et_Address = findViewById(R.id.et_Address);
         et_Name = findViewById(R.id.et_Name);

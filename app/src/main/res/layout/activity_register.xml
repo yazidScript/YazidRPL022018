@@ -105,7 +105,7 @@
             android:textSize="16sp"
             />
         <EditText
-            android:id="@+id/et_NoHp"
+            android:id="@+id/et_NoHpregister"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"

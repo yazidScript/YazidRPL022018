@@ -9,6 +9,17 @@
     <ImageView
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_90sdp"
+        android:tint="@color/colorAccent"
         android:src="@drawable/bike" />
+
+    <com.example.yazid12rpl02.ui.CustomTextViewLight
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/_25ssp"
+        android:text="Ayo Di Goeesss...."/>
 
 </LinearLayout>

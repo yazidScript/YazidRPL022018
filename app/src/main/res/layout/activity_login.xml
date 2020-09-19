@@ -94,7 +94,7 @@
 
         <LinearLayout
             android:id="@+id/btn_Login"
-            android:background="@drawable/bg_round1"
+            android:background="@drawable/bg_round2"
             android:orientation="vertical"
             android:layout_marginTop="20dp"
             android:gravity="center"
@@ -104,7 +104,7 @@
             <TextView
                 android:text="Login"
                 android:textSize="17sp"
-                android:textColor="#fff"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

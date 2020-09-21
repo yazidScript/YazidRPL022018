@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AdminUserActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
-    private ImageView iv_more_admin, ivNew;
+    private ImageView iv_more_admin, ivNew, icon_user;
 
     private SwipeRefreshLayout swipeRefresh;
     private RecyclerView rv;
@@ -78,6 +78,8 @@ public class AdminUserActivity extends AppCompatActivity implements SwipeRefresh
     }
 
     private void binding() {
+        icon_user = findViewById(R.id.icon_user);
+        icon_user.setVisibility(View.VISIBLE);
         iv_more_admin = findViewById(R.id.iv_more_admin);
         iv_more_admin.setOnClickListener(new View.OnClickListener() {
             private void doNothing() {

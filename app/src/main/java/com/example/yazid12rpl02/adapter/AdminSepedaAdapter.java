@@ -98,12 +98,12 @@ public class AdminSepedaAdapter extends RecyclerView.Adapter<AdminSepedaAdapter.
                         .load(Config.BASE_URL_UPLOADS + Amodel.getUNIT_GAMBAR())
                         .into(iv_sepeda);
             }
-            divDetail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AppHelper.goToSepedaAdminDetail(context, Amodel);
-                }
-            });
+//            divDetail.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    AppHelper.goToSepedaAdminDetail(context, Amodel);
+//                }
+//            });
 
             divDelete.setOnClickListener(new View.OnClickListener() {
                 private void doNothing() {

@@ -28,16 +28,16 @@
                 android:layout_marginTop="2sp"
                 tools:listitem="@layout/item_admin_sepeda_layout">
             </androidx.recyclerview.widget.RecyclerView>
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/ic_add_circle_black_24dp"
-                android:visibility="visible"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="8sp"
-                android:layout_marginBottom="8sp"
-                android:id="@+id/ivNew"
-                android:tint="@color/colorPrimary"/>
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:src="@drawable/ic_add_circle_black_24dp"-->
+<!--                android:visibility="visible"-->
+<!--                android:layout_gravity="bottom|end"-->
+<!--                android:layout_marginEnd="8sp"-->
+<!--                android:layout_marginBottom="8sp"-->
+<!--                android:id="@+id/ivNew"-->
+<!--                android:tint="@color/colorPrimary"/>-->
         </FrameLayout>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

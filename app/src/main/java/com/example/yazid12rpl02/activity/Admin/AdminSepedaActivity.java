@@ -35,7 +35,7 @@ import java.util.HashMap;
 
 public class AdminSepedaActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
-    private ImageView ivMore, ivAdd;
+    private ImageView ivMore, ivAdd, icon_bike;
 
     private SwipeRefreshLayout swipeRefresh;
     private RecyclerView rv;
@@ -82,6 +82,8 @@ public class AdminSepedaActivity extends AppCompatActivity implements SwipeRefre
         getSepedaList();
     }
     private void binding() {
+        icon_bike = findViewById(R.id.icon_bike);
+        icon_bike.setVisibility(View.VISIBLE);
         ivMore = findViewById(R.id.iv_more_admin);
         ivMore.setOnClickListener(new View.OnClickListener() {
             private void doNothing() {
@@ -93,14 +95,14 @@ public class AdminSepedaActivity extends AppCompatActivity implements SwipeRefre
                 logout();
             }
         });
-        ivAdd = findViewById(R.id.ivNew);
-        ivAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(AdminSepedaActivity.this,AdminSepedaCreateActivity.class);
-                startActivity(i);
-            }
-        });
+//        ivAdd = findViewById(R.id.ivNew);
+//        ivAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(AdminSepedaActivity.this,AdminSepedaCreateActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
         rv = findViewById(R.id.rvSepedaManage);
         swipeRefresh = findViewById(R.id.swipeRefresh);

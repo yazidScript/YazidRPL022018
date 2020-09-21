@@ -30,14 +30,6 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 logout();
             }
         });
-        divSepeda = findViewById(R.id.item_sepeda);
-        divSepeda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(AdminDashboardActivity.this,AdminSepedaActivity.class);
-                startActivity(i);
-            }
-        });
         divUser = findViewById(R.id.item_user);
         divUser.setOnClickListener(new View.OnClickListener() {
             @Override

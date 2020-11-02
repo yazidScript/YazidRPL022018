@@ -1,92 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/_10sdp"
-    android:orientation="vertical"
-    android:layout_marginTop="@dimen/_20sdp"
-    android:tag="cards main container"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_marginTop="@dimen/_2sdp"
+    android:layout_marginBottom="@dimen/_2sdp">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/divMenuProgress">
 
-        <RelativeLayout
-            android:id="@+id/item_sepeda"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/bg_oval"
-            android:layout_marginLeft="@dimen/_6sdp"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:gravity="center">
-
-
-            <ImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:tint="@color/colorPrimary"
-                android:src="@drawable/bicycle"/>
-
-        </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/item"
-                android:layout_centerInParent="true"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="7dp">
+            <com.example.yazid12rpl02.ui.CustomTextViewRegular
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="@dimen/_27ssp"
+                android:gravity="center"
+                android:text="Data Sepeda"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11.3dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="@dimen/_7sdp"
                 android:background="@drawable/bg_oval"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_marginLeft="@dimen/_15sdp"
-                android:layout_height="@dimen/_60sdp"
-                android:gravity="center">
+                android:id="@+id/tvDataSepeda"/>
 
-
-                <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:tint="@color/colorPrimary"
-                    android:src="@drawable/bicycle"/>
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/item2"
-                android:layout_alignParentRight="true"
+            <com.example.yazid12rpl02.ui.CustomTextViewRegular
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="@dimen/_27ssp"
+                android:gravity="center"
+                android:text="Data Sepeda"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11.3dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="@dimen/_7sdp"
                 android:background="@drawable/bg_oval"
-                android:layout_width="@dimen/_60sdp"
-                android:layout_marginLeft="@dimen/_15sdp"
-                android:layout_height="@dimen/_60sdp"
-                android:gravity="center">
+                android:id="@+id/tvDataSepeda1"/>
 
+            <com.example.yazid12rpl02.ui.CustomTextViewRegular
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="@dimen/_27ssp"
+                android:gravity="center"
+                android:text="Data Sepeda"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11.3dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@drawable/bg_oval"
+                android:id="@+id/tvDataSepeda2"/>
 
-                <ImageView
-                    android:layout_width="@dimen/_30sdp"
-                    android:layout_height="@dimen/_30sdp"
-                    android:tint="@color/colorPrimary"
-                    android:src="@drawable/bicycle"/>
+            <com.example.yazid12rpl02.ui.CustomTextViewRegular
+                android:layout_width="@dimen/_145sdp"
+                android:layout_height="@dimen/_27ssp"
+                android:gravity="center"
+                android:text="Data Sepeda"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11.3dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:background="@drawable/bg_oval"
+                android:id="@+id/tvDataSepeda3"/>
 
-            </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/item3"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/bg_oval"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:gravity="center">
+    </HorizontalScrollView>
 
-
-            <ImageView
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:tint="@color/colorPrimary"
-                android:src="@drawable/bicycle"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
 
 </LinearLayout>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,27 +17,11 @@
             android:id="@+id/icon_bike"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_32sdp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:src="@drawable/bicycle"
             android:layout_gravity="start|center_vertical"
             app:tint="@color/colorAccent" />
 
-        <ImageView
-            android:id="@+id/icon_user"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_32sdp"
-            android:visibility="gone"
-            android:src="@drawable/biker"
-            android:layout_gravity="start|center_vertical"
-            app:tint="@color/colorAccent" />
-
-        <com.example.yazid12rpl02.ui.CustomTextViewBold
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/_16ssp"
-            android:text="RENTAL SEPEDA"/>
 
     </LinearLayout>
 

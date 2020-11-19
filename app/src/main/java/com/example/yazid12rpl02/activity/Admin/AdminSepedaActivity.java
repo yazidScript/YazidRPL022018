@@ -95,14 +95,14 @@ public class AdminSepedaActivity extends AppCompatActivity implements SwipeRefre
                 logout();
             }
         });
-//        ivAdd = findViewById(R.id.ivNew);
-//        ivAdd.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(AdminSepedaActivity.this,AdminSepedaCreateActivity.class);
-//                startActivity(i);
-//            }
-//        });
+        ivAdd = findViewById(R.id.ivNew);
+        ivAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminSepedaActivity.this,AdminSepedaCreateActivity.class);
+                startActivity(i);
+            }
+        });
 
         rv = findViewById(R.id.rvSepedaManage);
         swipeRefresh = findViewById(R.id.swipeRefresh);

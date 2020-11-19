@@ -38,6 +38,14 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        divSepeda = findViewById(R.id.item_sepeda);
+        divSepeda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminDashboardActivity.this,AdminSepedaActivity.class);
+                startActivity(i);
+            }
+        });
     }
     private void logout() {
         new AlertDialog.Builder(AdminDashboardActivity.this)

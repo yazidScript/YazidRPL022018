@@ -55,7 +55,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_KodeSepeda"
+                                    android:id="@+id/etKodesepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -96,7 +96,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_merkSepeda"
+                                    android:id="@+id/etMerksepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -137,7 +137,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_warnaSepeda"
+                                    android:id="@+id/etWarnasepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -146,7 +146,7 @@
                                     android:background="#00000000"
                                     android:gravity="top|left"
                                     android:hint="..."
-                                    android:inputType="textCapCharacters"
+                                    android:inputType="text"
                                     android:textColor="#434343"
                                     android:textSize="@dimen/_10ssp"/>
 
@@ -178,7 +178,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_harga"
+                                    android:id="@+id/etHargasepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -187,7 +187,7 @@
                                     android:background="#00000000"
                                     android:gravity="top|left"
                                     android:hint="..."
-                                    android:inputType="textCapCharacters"
+                                    android:inputType="number"
                                     android:textColor="#434343"
                                     android:textSize="@dimen/_10ssp"/>
 
@@ -196,38 +196,38 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_marginLeft="@dimen/_12ssp"
-                                android:layout_marginTop="5dp"
-                                android:gravity="center_vertical"
-                                android:padding="8sp">
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:layout_marginLeft="@dimen/_12ssp"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                android:padding="8sp">-->
 
-                                <com.example.yazid12rpl02.ui.CustomTextViewBold
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textSize="@dimen/_10ssp"
-                                    android:textColor="@color/colorAccent"
-                                    android:text="IMAGE SEPEDA"
-                                    android:textStyle="bold"/>
+<!--                                <com.example.yazid12rpl02.ui.CustomTextViewBold-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:textSize="@dimen/_10ssp"-->
+<!--                                    android:textColor="@color/colorAccent"-->
+<!--                                    android:text="IMAGE SEPEDA"-->
+<!--                                    android:textStyle="bold"/>-->
 
-                                <ImageView
-                                    android:id="@+id/iv_sepeda"
-                                    android:background="#3C000000"
-                                    android:src="@drawable/ic_image_black_24dp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_120sdp"/>
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/iv_sepeda"-->
+<!--                                    android:background="#3C000000"-->
+<!--                                    android:src="@drawable/ic_image_black_24dp"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="@dimen/_120sdp"/>-->
 
-                            </LinearLayout>
+<!--                            </LinearLayout>-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
                     </LinearLayout>
 

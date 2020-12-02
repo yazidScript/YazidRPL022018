@@ -1,5 +1,6 @@
 <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbarAdmin"
     android:layout_width="match_parent"
     android:background="@color/colorPrimaryDark"
@@ -15,19 +16,19 @@
             android:id="@+id/icon_bike"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_32sdp"
-            android:tint="@color/colorAccent"
             android:visibility="gone"
             android:src="@drawable/bicycle"
-            android:layout_gravity="start|center_vertical" />
+            android:layout_gravity="start|center_vertical"
+            app:tint="@color/colorAccent" />
 
         <ImageView
             android:id="@+id/icon_user"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_32sdp"
-            android:tint="@color/colorAccent"
             android:visibility="gone"
             android:src="@drawable/biker"
-            android:layout_gravity="start|center_vertical" />
+            android:layout_gravity="start|center_vertical"
+            app:tint="@color/colorAccent" />
 
         <com.example.yazid12rpl02.ui.CustomTextViewBold
             android:layout_width="wrap_content"
@@ -45,7 +46,7 @@
         android:layout_height="@dimen/_32sdp"
         android:layout_gravity="end|center_vertical"
         android:layout_marginRight="@dimen/_16ssp"
-        android:tint="@color/colorAccent"
-        android:src="@drawable/ic_baseline_person_24" />
+        android:src="@drawable/ic_baseline_person_24"
+        app:tint="@color/colorAccent" />
 
 </androidx.appcompat.widget.Toolbar>

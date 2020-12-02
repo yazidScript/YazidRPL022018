@@ -48,6 +48,7 @@ public final class AppHelper {
         item.setUNIT_ID(rowData.optString("UNIT_ID"));
         item.setUNIT_KODE(rowData.optString("UNIT_KODE"));
         item.setUNIT_MERK(rowData.optString("UNIT_MERK"));
+        item.setUNIT_JENIS(rowData.optString("UNIT_JENIS"));
         item.setUNIT_WARNA(rowData.optString("UNIT_WARNA"));
         item.setUNIT_HARGABARANG(rowData.optString("UNIT_HARGASEWA"));
         item.setUNIT_GAMBAR(rowData.optString("UNIT_GAMBAR"));
@@ -63,11 +64,12 @@ public final class AppHelper {
         bundle.putString("UNIT_KODE", rowData.getUNIT_KODE().toUpperCase());
         bundle.putString("UNIT_MERK", rowData.getUNIT_MERK().toUpperCase());
         bundle.putString("UNIT_WARNA", rowData.getUNIT_WARNA());
+        bundle.putString("UNIT_JENIS", rowData.getUNIT_JENIS());
         bundle.putString("UNIT_HARGASEWA", rowData.getUNIT_HARGABARANG());
         bundle.putString("UNIT_GAMBAR", rowData.getUNIT_GAMBAR().toUpperCase());
 
         Intent i = new Intent(context, AdminSepedaDetailActivity.class);
-        i.putExtra("extra_sepeda", rowData);
+        i.putExtra("extra_Admsepeda", rowData);
         context.startActivity(i);
     }
 
@@ -77,6 +79,7 @@ public final class AppHelper {
         item.setUNIT_KODE(rowData.optString("UNIT_KODE"));
         item.setUNIT_MERK(rowData.optString("UNIT_MERK"));
         item.setUNIT_WARNA(rowData.optString("UNIT_WARNA"));
+        item.setUNIT_JENIS(rowData.optString("UNIT_JENIS"));
         item.setUNIT_HARGABARANG(rowData.optString("UNIT_HARGABARANG"));
         item.setUNIT_GAMBAR(rowData.optString("UNIT_GAMBAR"));
 
@@ -91,6 +94,7 @@ public final class AppHelper {
         bundle.putString("UNIT_KODE", rowData.getUNIT_KODE().toUpperCase());
         bundle.putString("UNIT_MERK", rowData.getUNIT_MERK().toUpperCase());
         bundle.putString("UNIT_WARNA", rowData.getUNIT_WARNA());
+        bundle.putString("UNIT_JENIS", rowData.getUNIT_JENIS());
         bundle.putString("UNIT_HARGABARANG", rowData.getUNIT_HARGABARANG());
         bundle.putString("UNIT_GAMBAR", rowData.getUNIT_GAMBAR().toUpperCase());
 

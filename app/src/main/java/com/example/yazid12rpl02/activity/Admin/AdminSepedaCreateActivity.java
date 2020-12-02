@@ -43,19 +43,15 @@ import java.util.HashMap;
 import id.zelory.compressor.Compressor;
 
 public class AdminSepedaCreateActivity extends AppCompatActivity implements IPickResult {
-    private EditText et_kodeSepeda, et_warnaSepeda, et_merkSepeda, et_HargaSepeda;
-    private ImageView iv_sepeda;
-    private LinearLayout btn_save;
-    private ProgressBar PbSave;
+    private EditText etKodeSepeda, etWarnaSepeda, etMerkSepeda, etHargaSepeda, etJenisSepeda;
+    private ImageView ivSepeda;
+    private LinearLayout btnSave;
+    private ProgressBar pbSave;
 
-    Button btPick, btSend;
     private Bitmap mSelectedImage;
     private String mSelectedImagePath ;
     private File uploadFile;
-    TextView tvLinkFoto;
-    ImageView ivFotoDone;
 
-    private boolean mBusy = false;
     private String mLoginToken = "";
     private String mUserId = "";
     @Override
@@ -74,140 +70,118 @@ public class AdminSepedaCreateActivity extends AppCompatActivity implements IPic
     }
 
     private void binding(){
-        et_kodeSepeda = findViewById(R.id.et_KodeSepeda);
-        et_merkSepeda = findViewById(R.id.et_merkSepeda);
-        et_warnaSepeda = findViewById(R.id.et_warnaSepeda);
-        et_HargaSepeda = findViewById(R.id.et_harga);
-        iv_sepeda = findViewById(R.id.iv_sepeda);
-        iv_sepeda.setOnClickListener(new View.OnClickListener() {
+        etKodeSepeda = findViewById(R.id.et_KodeSepeda);
+        etMerkSepeda = findViewById(R.id.et_merkSepeda);
+        etWarnaSepeda = findViewById(R.id.et_warnaSepeda);
+        etJenisSepeda = findViewById(R.id.et_jenisSepeda);
+        etHargaSepeda = findViewById(R.id.et_harga);
+        ivSepeda = findViewById(R.id.iv_sepeda);
+        ivSepeda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PickImageDialog.build(new PickSetup()).show(getSupportFragmentManager());
+                PickImageDialog.build(new PickSetup()).show(AdminSepedaCreateActivity.this);
+                new PickSetup().setCameraButtonText("Gallery");
             }
         });
-        btn_save = findViewById(R.id.btnSave);
-        btn_save.setOnClickListener(new View.OnClickListener() {
+        btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveData();
             }
         });
-        PbSave = findViewById(R.id.pbSave);
-        PbSave.setVisibility(View.GONE);
+        pbSave = findViewById(R.id.pbSave);
+        pbSave.setVisibility(View.GONE);
 
     }
 
     private void saveData() {
 
-        if (et_kodeSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(et_kodeSepeda.getText().toString().trim())) {
+        if (etKodeSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(etKodeSepeda.getText().toString().trim())) {
             Toast.makeText(this, "Harap isikan kode sepeda", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (et_merkSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(et_merkSepeda.getText().toString().trim())) {
+        if (etMerkSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(etMerkSepeda.getText().toString().trim())) {
             Toast.makeText(this, "Harap isikan merk sepeda", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (et_warnaSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(et_warnaSepeda.getText().toString().trim())) {
+        if (etWarnaSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(etWarnaSepeda.getText().toString().trim())) {
             Toast.makeText(this, "Harap isikan warna sepeda", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (et_HargaSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(et_HargaSepeda.getText().toString().trim())) {
+        if (etJenisSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(etJenisSepeda.getText().toString().trim())) {
+            Toast.makeText(this, "Harap isikan jenis sepeda", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (etHargaSepeda.getText().toString().trim().equalsIgnoreCase("") || TextUtils.isEmpty(etHargaSepeda.getText().toString().trim())) {
             Toast.makeText(this, "Harap isikan harga sepeda", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        btn_save.setVisibility(View.GONE);
-        PbSave.setVisibility(View.VISIBLE);
+        btnSave.setVisibility(View.GONE);
+        pbSave.setVisibility(View.VISIBLE);
 
         HashMap<String, String> body = new HashMap<>();
         body.put("act", "create_unit");
-        body.put("unitMerk", et_merkSepeda.getText().toString().trim());
-        body.put("unitHargasewa", et_HargaSepeda.getText().toString().trim());
-        body.put("unitWarna", et_warnaSepeda.getText().toString().trim().toUpperCase());
-        body.put("unitKode", et_kodeSepeda.getText().toString().trim().toUpperCase());
+        body.put("unitMerk", etMerkSepeda.getText().toString().trim());
+        body.put("unitHargasewa", etHargaSepeda.getText().toString().trim());
+        body.put("unitWarna", etWarnaSepeda.getText().toString().trim().toUpperCase());
+        body.put("unitJenis", etJenisSepeda.getText().toString().trim().toUpperCase());
+        body.put("unitKode", etKodeSepeda.getText().toString().trim().toUpperCase());
         body.put("loginToken", mLoginToken);
 
-        HashMap<String, File> file = new HashMap<>();
-        if (mSelectedImagePath != null){
-            file.put("uploadFile", uploadFile);
-        }
+        AndroidNetworking.upload(Config.BASE_URL_API + "unit.php")
+                .addMultipartFile("uploadFile",uploadFile)
+                .addMultipartParameter(body)
+                .setPriority(Priority.HIGH)
+                .setOkHttpClient(((RS) this.getApplication()).getOkHttpClient())
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    private void doNothing() {
 
-//        AndroidNetworking.upload(Config.BASE_URL_API + "unit.php")
-//                .addMultipartFile(file)
-//                .addMultipartParameter(body)
-//                .setPriority(Priority.HIGH)
-//                .setOkHttpClient(((RS) this.getApplication()).getOkHttpClient())
-//                .build()
-//                .getAsJSONObject(new JSONObjectRequestListener() {
-//                    private void doNothing() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        PbSave.setVisibility(View.GONE);
-//                        btn_save.setVisibility(View.VISIBLE);
-//
-//                        String message = response.optString(Config.RESPONSE_MESSAGE_FIELD);
-//                        String status = response.optString(Config.RESPONSE_STATUS_FIELD);
-//
-//                        Toast.makeText(AdminSepedaCreateActivity.this, message, Toast.LENGTH_LONG).show();
-//
-//                        if (status.equalsIgnoreCase(Config.RESPONSE_STATUS_VALUE_SUCCESS)) {
-//                            PbSave.setVisibility(View.GONE);
-//                            btn_save.setVisibility(View.GONE);
-//                            SharedPreferences done = getSharedPreferences(Config.SHARED_PREF_NAME_BIAYA_SINKRON, Context.MODE_PRIVATE);
-//                            SharedPreferences.Editor editorBiayaDone = done.edit();
-//                            editorBiayaDone.putBoolean(Config.SHARED_PREF_NAME_BIAYA_SINKRON, false);
-//                            editorBiayaDone.putString(Config.BS_KODE, "");
-//                            editorBiayaDone.putString(Config.BS_ORDER_ID_SPINNER, "");
-//                            editorBiayaDone.putString(Config.BS_NOMINAL, "");
-//                            editorBiayaDone.putString(Config.BS_INFO, "");
-//                            editorBiayaDone.putString(Config.BS_IMG_PATH_BIAYA, "");
-//                            editorBiayaDone.commit();
-//                            finish();
-//                        } else {
-//                            Toast.makeText(AdminSepedaCreateActivity.this, "Proses daftar biaya baru gagal\nData perlu disinkronisasi", Toast.LENGTH_LONG).show();
-//                            SharedPreferences preferences = getSharedPreferences(Config.SHARED_PREF_NAME_BIAYA_SINKRON, Context.MODE_PRIVATE);
-//                            preferences.edit()
-//                                    .putString(Config.BS_KODE, oeCode)
-//                                    .putString(Config.BS_ORDER_ID_SPINNER, mSelectedOrderId)
-//                                    .putString(Config.BS_NOMINAL, oeAmount)
-//                                    .putString(Config.BS_INFO, oeInfo)
-//                                    .putString(Config.BS_IMG_PATH_BIAYA, mSelectedImagePathBiaya)
-//                                    .apply();
-//
-//                            PbSave.setVisibility(View.GONE);
-//                            btn_save.setVisibility(View.VISIBLE);
-//
-//                            finish();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onError(ANError anError) {
-//                        btn_save.setVisibility(View.VISIBLE);
-//                        PbSave.setVisibility(View.GONE);
-//                        Toast.makeText(AdminSepedaCreateActivity.this, "Proses daftar biaya baru gagal\nData perl di sinkronisasi", Toast.LENGTH_LONG).show();
-//                        Log.d("RBA", "onError: " + anError.getErrorBody());
-//                        Log.d("RBA", "onError: " + anError.getLocalizedMessage());
-//                        Log.d("RBA", "onError: " + anError.getErrorDetail());
-//                        Log.d("RBA", "onError: " + anError.getResponse());
-//                        Log.d("RBA", "onError: " + anError.getErrorCode());
-//                        SharedPreferences preferences = getSharedPreferences(Config.SHARED_PREF_NAME_BIAYA_SINKRON, Context.MODE_PRIVATE);
-//                        preferences.edit()
-//                                .putString(Config.BS_KODE, oeCode)
-//                                .putString(Config.BS_ORDER_ID_SPINNER, mSelectedOrderId)
-//                                .putString(Config.BS_NOMINAL, oeAmount)
-//                                .putString(Config.BS_INFO, oeInfo)
-//                                .putString(Config.BS_IMG_PATH_BIAYA , mSelectedImagePathBiaya)
-//                                .apply();
-//                        finish();
-//                    }
-//                });
+                    }
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        pbSave.setVisibility(View.GONE);
+                        btnSave.setVisibility(View.VISIBLE);
+
+                        String message = response.optString(Config.RESPONSE_MESSAGE_FIELD);
+                        String status = response.optString(Config.RESPONSE_STATUS_FIELD);
+
+                        Toast.makeText(AdminSepedaCreateActivity.this, message, Toast.LENGTH_LONG).show();
+
+                        if (status.equalsIgnoreCase(Config.RESPONSE_STATUS_VALUE_SUCCESS)) {
+                            pbSave.setVisibility(View.GONE);
+                            btnSave.setVisibility(View.GONE);
+                            Intent i = new Intent(getApplicationContext(),AdminSepedaActivity.class);
+                            startActivity(i);
+                            finish();
+                        } else {
+                            Toast.makeText(AdminSepedaCreateActivity.this, "Proses daftar sepeda baru gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
+                            pbSave.setVisibility(View.GONE);
+                            btnSave.setVisibility(View.VISIBLE);
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        btnSave.setVisibility(View.VISIBLE);
+                        pbSave.setVisibility(View.GONE);
+                        Toast.makeText(AdminSepedaCreateActivity.this, "Proses daftar sepeda baru gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
+                        Log.d("RBA", "onError: " + anError.getErrorBody());
+                        Log.d("RBA", "onError: " + anError.getLocalizedMessage());
+                        Log.d("RBA", "onError: " + anError.getErrorDetail());
+                        Log.d("RBA", "onError: " + anError.getResponse());
+                        Log.d("RBA", "onError: " + anError.getErrorCode());
+                        finish();
+                    }
+                });
 
     }
 
@@ -228,7 +202,7 @@ public class AdminSepedaCreateActivity extends AppCompatActivity implements IPic
                 Log.d("RBA", "onPickResult: "+ mSelectedImagePath);
 
                 mSelectedImage = r.getBitmap();
-                iv_sepeda.setImageBitmap(mSelectedImage);
+                ivSepeda.setImageBitmap(mSelectedImage);
                 //selectedImageFile = new File(r.getPath());
             }
             catch (IOException e) {

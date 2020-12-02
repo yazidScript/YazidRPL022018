@@ -7,6 +7,7 @@ public class SepedaModel implements Parcelable {
     private String UNIT_ID;
     private String UNIT_KODE;
     private String UNIT_WARNA;
+    private String UNIT_JENIS;
     private String UNIT_MERK;
     private String UNIT_HARGABARANG;
     private String UNIT_GAMBAR;
@@ -15,6 +16,7 @@ public class SepedaModel implements Parcelable {
         UNIT_ID = in.readString();
         UNIT_KODE = in.readString();
         UNIT_WARNA = in.readString();
+        UNIT_JENIS = in.readString();
         UNIT_MERK = in.readString();
         UNIT_HARGABARANG = in.readString();
         UNIT_GAMBAR = in.readString();
@@ -65,6 +67,14 @@ public class SepedaModel implements Parcelable {
         this.UNIT_WARNA = UNIT_WARNA;
     }
 
+    public String getUNIT_JENIS() {
+        return UNIT_JENIS;
+    }
+
+    public void setUNIT_JENIS(String UNIT_JENIS) {
+        this.UNIT_JENIS = UNIT_JENIS;
+    }
+
     public String getUNIT_MERK() {
         return UNIT_MERK;
     }
@@ -98,6 +108,7 @@ public class SepedaModel implements Parcelable {
         dest.writeString(UNIT_ID);
         dest.writeString(UNIT_KODE);
         dest.writeString(UNIT_WARNA);
+        dest.writeString(UNIT_JENIS);
         dest.writeString(UNIT_MERK);
         dest.writeString(UNIT_HARGABARANG);
         dest.writeString(UNIT_GAMBAR);

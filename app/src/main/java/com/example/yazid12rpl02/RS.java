@@ -20,9 +20,9 @@ public class RS extends Application {
         super.onCreate();
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        if(BuildConfig.DEBUG) {
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        }
+//        if(BuildConfig.DEBUG) {
+//            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+//        }
 
         okHttpClient = new OkHttpClient().newBuilder()
                 .connectTimeout(240, TimeUnit.SECONDS)

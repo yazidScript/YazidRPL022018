@@ -15,6 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.yazid12rpl02.R;
@@ -31,8 +36,6 @@ public class SepedaAdapter extends RecyclerView.Adapter<SepedaAdapter.ItemViewHo
     private Context context;
     private List<SepedaModel> mList;
     private String mLoginToken = "";
-    private boolean mBusy = false;
-    private ProgressDialog mProgressDialog;
     private SepedaActivity mAdminUserActivity;
 
 
@@ -72,6 +75,7 @@ public class SepedaAdapter extends RecyclerView.Adapter<SepedaAdapter.ItemViewHo
             }
         }
     }
+
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         private CardView divDetail;

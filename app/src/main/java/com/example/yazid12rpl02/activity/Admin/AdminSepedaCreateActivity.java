@@ -28,12 +28,15 @@ import com.androidnetworking.interfaces.UploadProgressListener;
 import com.bumptech.glide.Glide;
 import com.example.yazid12rpl02.R;
 import com.example.yazid12rpl02.RS;
+import com.example.yazid12rpl02.activity.LoginActivity;
+import com.example.yazid12rpl02.activity.RegisterActivity;
 import com.example.yazid12rpl02.helper.Config;
 import com.vansuita.pickimage.bean.PickResult;
 import com.vansuita.pickimage.bundle.PickSetup;
 import com.vansuita.pickimage.dialog.PickImageDialog;
 import com.vansuita.pickimage.listeners.IPickResult;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -41,6 +44,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import id.zelory.compressor.Compressor;
+
 
 public class AdminSepedaCreateActivity extends AppCompatActivity implements IPickResult {
     private EditText etKodeSepeda, etWarnaSepeda, etMerkSepeda, etHargaSepeda, etJenisSepeda;
@@ -70,11 +74,11 @@ public class AdminSepedaCreateActivity extends AppCompatActivity implements IPic
     }
 
     private void binding(){
-        etKodeSepeda = findViewById(R.id.et_KodeSepeda);
-        etMerkSepeda = findViewById(R.id.et_merkSepeda);
-        etWarnaSepeda = findViewById(R.id.et_warnaSepeda);
-        etJenisSepeda = findViewById(R.id.et_jenisSepeda);
-        etHargaSepeda = findViewById(R.id.et_harga);
+        etKodeSepeda = findViewById(R.id.etKodesepeda);
+        etMerkSepeda = findViewById(R.id.etMerksepeda);
+        etWarnaSepeda = findViewById(R.id.etWarnasepeda);
+        etJenisSepeda = findViewById(R.id.etJenissepeda);
+        etHargaSepeda = findViewById(R.id.etHargasepeda);
         ivSepeda = findViewById(R.id.iv_sepeda);
         ivSepeda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,7 +186,6 @@ public class AdminSepedaCreateActivity extends AppCompatActivity implements IPic
                         finish();
                     }
                 });
-
     }
 
 

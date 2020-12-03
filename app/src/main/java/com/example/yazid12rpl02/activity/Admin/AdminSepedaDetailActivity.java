@@ -179,11 +179,11 @@ public class AdminSepedaDetailActivity extends AppCompatActivity implements IPic
                         if (status.equalsIgnoreCase(Config.RESPONSE_STATUS_VALUE_SUCCESS)) {
                             pbSave.setVisibility(View.GONE);
                             btnSave.setVisibility(View.GONE);
-//                            Intent i = new Intent(getApplicationContext(),AdminSepedaActivity.class);
-//                            startActivity(i);
+                            Intent i = new Intent(getApplicationContext(),AdminSepedaActivity.class);
+                            startActivity(i);
                             finish();
                         } else {
-                            Toast.makeText(AdminSepedaDetailActivity.this, "Proses daftar sepeda baru gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AdminSepedaDetailActivity.this, "Proses update sepeda gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
                             pbSave.setVisibility(View.GONE);
                             btnSave.setVisibility(View.VISIBLE);
                         }
@@ -193,7 +193,7 @@ public class AdminSepedaDetailActivity extends AppCompatActivity implements IPic
                     public void onError(ANError anError) {
                         btnSave.setVisibility(View.VISIBLE);
                         pbSave.setVisibility(View.GONE);
-                        Toast.makeText(AdminSepedaDetailActivity.this, "Proses daftar sepeda baru gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
+                        Toast.makeText(AdminSepedaDetailActivity.this, "Proses update sepeda gagal\nCoba ulangi lagi", Toast.LENGTH_LONG).show();
                         Log.d("RBA", "onError: " + anError.getErrorBody());
                         Log.d("RBA", "onError: " + anError.getLocalizedMessage());
                         Log.d("RBA", "onError: " + anError.getErrorDetail());

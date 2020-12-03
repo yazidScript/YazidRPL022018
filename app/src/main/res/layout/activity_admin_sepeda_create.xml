@@ -55,7 +55,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_KodeSepeda"
+                                    android:id="@+id/etKodesepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -96,7 +96,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_merkSepeda"
+                                    android:id="@+id/etMerksepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -137,7 +137,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_warnaSepeda"
+                                    android:id="@+id/etWarnasepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -178,7 +178,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_jenisSepeda"
+                                    android:id="@+id/etJenissepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"
@@ -219,7 +219,7 @@
                                     android:textStyle="bold"/>
 
                                 <com.example.yazid12rpl02.ui.CustomEditTextRegular
-                                    android:id="@+id/et_harga"
+                                    android:id="@+id/etHargasepeda"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="0dp"

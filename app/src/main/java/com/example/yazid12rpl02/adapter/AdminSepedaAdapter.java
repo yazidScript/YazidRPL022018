@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,26 +80,19 @@ public class AdminSepedaAdapter extends RecyclerView.Adapter<AdminSepedaAdapter.
         }
     }
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-        private RelativeLayout divDetail;
-        private TextView tv_nama;
-        private ImageView iv_sepeda, divDelete;
+        private LinearLayout divDetail;
+        private TextView tvKodesepeda, tvMerkSepeda;
+        private ImageView divDelete;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvKodesepeda = itemView.findViewById(R.id.tvKodesepeda);
+            tvMerkSepeda = itemView.findViewById(R.id.tvMerksepeda);
             divDetail = itemView.findViewById(R.id.item_sepeda);
-            divDelete = itemView.findViewById(R.id.divDelete);
-            iv_sepeda = itemView.findViewById(R.id.ivUnitImg);
+            divDelete = itemView.findViewById(R.id.ivDelete);
         }
         private void bind(final SepedaModel Amodel) {
-            if(Amodel.getUNIT_GAMBAR().contains(Config.UPLOAD_FOLDER)) {
-                Picasso.with(context)
-                        .load(Config.BASE_URL + Amodel.getUNIT_GAMBAR())
-                        .into(iv_sepeda);
-            }
-            else {
-                Picasso.with(context)
-                        .load(Config.BASE_URL_UPLOADS + Amodel.getUNIT_GAMBAR())
-                        .into(iv_sepeda);
-            }
+            tvKodesepeda.setText(Amodel.getUNIT_KODE());
+            tvMerkSepeda.setText(Amodel.getUNIT_MERK());
             divDetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

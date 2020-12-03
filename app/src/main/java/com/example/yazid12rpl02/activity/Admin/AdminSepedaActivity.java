@@ -188,4 +188,9 @@ public class AdminSepedaActivity extends AppCompatActivity implements SwipeRefre
                     }
                 }).create().show();
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

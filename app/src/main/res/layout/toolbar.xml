@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarAdmin"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="?actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icon_bike"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:visibility="visible"
+            android:src="@drawable/bicycle"
+            android:layout_gravity="start|center_vertical"
+            app:tint="@color/colorAccent" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_more_admin"
+        android:layout_width="@dimen/_28ssp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginRight="@dimen/_16ssp"
+        android:src="@drawable/ic_baseline_person_24"
+        app:tint="@color/colorAccent" />
+
+</androidx.appcompat.widget.Toolbar>

@@ -59,20 +59,20 @@ public class SepedaModel implements Parcelable {
         this.UNIT_KODE = UNIT_KODE;
     }
 
-    public String getUNIT_WARNA() {
-        return UNIT_WARNA;
-    }
-
-    public void setUNIT_WARNA(String UNIT_WARNA) {
-        this.UNIT_WARNA = UNIT_WARNA;
-    }
-
     public String getUNIT_JENIS() {
         return UNIT_JENIS;
     }
 
     public void setUNIT_JENIS(String UNIT_JENIS) {
         this.UNIT_JENIS = UNIT_JENIS;
+    }
+
+    public String getUNIT_WARNA() {
+        return UNIT_WARNA;
+    }
+
+    public void setUNIT_WARNA(String UNIT_WARNA) {
+        this.UNIT_WARNA = UNIT_WARNA;
     }
 
     public String getUNIT_MERK() {
